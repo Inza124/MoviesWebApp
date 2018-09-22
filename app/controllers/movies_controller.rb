@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user! ,except: [:show, :index]
+  before_action :authenticate_user!
 
   # GET /movies
   # GET /movies.json
@@ -11,6 +11,7 @@ class MoviesController < ApplicationController
   # GET /movies/1
   # GET /movies/1.json
   def show
+    @reviews = Review.where(movie_id: @movie.id).order("created_at DESC")
   end
 
   # GET /movies/new

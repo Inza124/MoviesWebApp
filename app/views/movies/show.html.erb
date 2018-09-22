@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<div class="col-md-6">
 <%= image_tag  @movie.image.url(:medium) %>
 
 <p>
@@ -26,6 +27,24 @@
   <strong>Rating:</strong>
   <%= @movie.rating %>
 </p>
+</div>
+
+<div class="col-md-6">
+<% if @reviews.blank? %>
+<h2>There are no reviews just yet, be the first!</h2>
+<%= button_to 'Write a review', new_movie_review_path(@movie), :class => "btn btn-danger", :method => :get %>
+<% else %>
+<% @reviews.each do |review| %>
+<div class="reviews">
+<p> <%= review.rating %> </p>
+<p> <%= review.comment %> </p>
+</div>
+<% end %>
+
+</div>
+<% end %>
+<br>
+
 
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>

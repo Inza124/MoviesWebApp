@@ -3,6 +3,6 @@
         <%= image_tag  movie.image.url(:medium) %> <br> <br>
         <p class="line">Title: </p> <%= movie.title %> <br>
         <p class="line">Rating: </p><%= movie.rating %> <span class="glyphicon glyphicon-star-empty"></span> <br>
-        <%= button_to 'Reviews', movie, :class => "btn btn-warning", :method => :get %>
+        <%= button_to 'Details', movie, :class => "btn btn-warning", :method => :get %>
       </div>
     <% end %>
