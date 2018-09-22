@@ -2,27 +2,29 @@
 
 <nav class="navbar justify-content-between">
   <a class="navbar-brand">Navbar</a>
-  <form class="form-inline">
-      <button class="btn btn-outline-success my-2 my-sm-0" style="float:right; margin-right: 7pt; margin-top: 4pt;" type="submit">Search</button>
-    <input class="form-control mr-sm-2" style="float:right; margin-right: 4pt; margin-top: 4pt;" type="search" placeholder="Search" aria-label="Search">
 
-  </form>
+
+<%= form_tag movies_path, :method => 'get', :id => "movies_search" do %>
+                <div class="input-group col-md-2" style="float:right; margin-top: 5pt; margin-right: 10pt;">
+                      <%= text_field_tag :search, params[:search], class: 'form-control' %>
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+           
+                  
+
+<% end %>
+
+
 </nav>
 
 <h1>Movies</h1>
 
   <body>
-    <% @movies.each do |movie| %>
-      <div class="col-sm-3 model" style="padding-left: 10pt;">
-        <%= image_tag  movie.image.url(:medium) %> <br>
-        <p class="line">Title: </p> <%= movie.title %> <br>
-        <p class="line">Director: </p><%= movie.director %> <br>
-        <p class="line">Rating: </p><%= movie.rating %> <br>
-        <%= link_to 'Show', movie %>
-        <%= link_to 'Edit', edit_movie_path(movie) %>
-        <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
-    <% end %>
+  <div id="products">  <%= render 'movies'  %> </div>
   </body>
 
 <br>

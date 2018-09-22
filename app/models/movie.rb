@@ -3,4 +3,15 @@ class Movie < ApplicationRecord
     validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 belongs_to :user
 
+
+
+def self.search(search)
+    if search
+      where('title LIKE ?', "%#{search}%")
+    else
+        where(nil)
+    end
+  end
+  
+  
 end

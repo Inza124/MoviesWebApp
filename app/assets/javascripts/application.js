@@ -15,3 +15,14 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap.min 
+
+$(function() {
+    $("#movies_search input").keyup(function() {
+      $.get($("#movies_search").attr("action"), $("#movies_search").serialize(), null, "script");
+      return false;
+    });
+  });
