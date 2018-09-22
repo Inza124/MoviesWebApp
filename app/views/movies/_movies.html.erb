@@ -1,11 +1,8 @@
 <% @movies.each do |movie| %>
       <div class="col-sm-3 model" style="padding-left: 10pt;">
-        <%= image_tag  movie.image.url(:medium) %> <br>
+        <%= image_tag  movie.image.url(:medium) %> <br> <br>
         <p class="line">Title: </p> <%= movie.title %> <br>
-        <p class="line">Director: </p><%= movie.director %> <br>
-        <p class="line">Rating: </p><%= movie.rating %> <br>
-        <%= link_to 'Show', movie %>
-        <%= link_to 'Edit', edit_movie_path(movie) %>
-        <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <p class="line">Rating: </p><%= movie.rating %> <span class="glyphicon glyphicon-star-empty"></span> <br>
+        <%= button_to 'Reviews', movie, :class => "btn btn-warning", :method => :get %>
       </div>
     <% end %>
