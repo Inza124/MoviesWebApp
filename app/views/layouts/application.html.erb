@@ -12,6 +12,32 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> 
   </head>
 
+<nav class="navbar justify-content-between input-group-btn">
+  <a class="navbar-brand">Heroku-test</a>
+
+ <% if user_signed_in?  %>
+ <text class="navbar-brand" style="font-size: 15pt; margin-bottom: -25pt; margin-right: 10pt;" > Hello, <%= current_user.email %></text>
+                <%= link_to "Log out", destroy_user_session_path, :class => 'btn btn-info navbtn' ,:method=>'delete'%>
+        <% else %>
+                <%= link_to "Sign In", new_user_session_path, :class => 'btn btn-info navbtn' %>
+                <%= link_to "Sign Up", new_user_registration_path, :class => 'btn btn-info navbtn' %>
+        <% end %>
+<%= form_tag movies_path, :method => 'get', :id => "movies_search" do %>
+                <div class="input-group col-md-2" style="float:right; margin-top: -25pt; margin-right: 10pt;">
+                      <%= text_field_tag :search, params[:search], class: 'form-control' %>
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+           
+                  
+
+<% end %>
+
+
+</nav>
   <body id="bg">
 
 
