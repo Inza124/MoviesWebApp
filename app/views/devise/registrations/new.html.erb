@@ -1,29 +1,31 @@
-<h2>Sign up</h2>
+<div style="margin-left: 100pt;">
+<h2 style="font-size: 60pt; font-family: 'Nunito', sans-serif;">Sign up</h2> <br>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email, :class => 'newlabel' %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", :class =>'form-control formxs' %>
   </div>
-
+<br>
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :password, :class => 'newlabel' %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", :class =>'form-control formxs' %>
   </div>
-
+<br>
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.label :password_confirmation, :class => 'newlabel' %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off", :class =>'form-control formxs' %>
   </div>
-
+<br>
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", :class => 'btn btn-lg btn-secondary' %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

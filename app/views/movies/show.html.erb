@@ -1,50 +1,49 @@
 <p id="notice"><%= notice %></p>
 
-<div class="col-md-6">
-<%= image_tag  @movie.image.url(:medium), :class => "Img" %>
-
-<p>
+<div class="col-md-6" style="padding: 15pt;">
+<%= image_tag  @movie.image.url(:medium), :class => "Img", :style => "margin-left: 40pt;" %>
+<br> <br>
+<p class="infos">
   <strong>Title:</strong>
   <%= @movie.title %>
 </p>
 
-<p>
+<p class="infos" style="width: 70%;">
   <strong>Description:</strong>
   <%= @movie.description %>
 </p>
 
-<p>
+<p class="infos">
   <strong>Movie length:</strong>
   <%= @movie.movie_length %>
 </p>
 
-<p>
+<p class="infos">
   <strong>Director:</strong>
   <%= @movie.director %>
 </p>
 
-<p>
+<p class="infos">
   <strong>Rating:</strong>
   <%= @movie.rating %>
 </p>
 </div>
 
-<div class="col-md-6">
+<div class="col-md-6" >
 <% if @reviews.blank? %>
 <h2>There are no reviews just yet, be the first!</h2>
 <%= button_to 'Write a review', new_movie_review_path(@movie), :class => "btn btn-danger", :method => :get %>
 <% else %>
 <% @reviews.each do |review| %>
 <div class="reviews">
-<p> <%= review.rating %> </p>
-<p> <%= review.comment %> </p>
+<p class="infos rev"> Rating:    <%= review.rating %> <span class="glyphicon glyphicon-star-empty"></span></p>
+<p class="infos rev" >Comment:   <%= review.comment %> </p> 
+<hr>
 </div>
 <% end %>
+<%= button_to 'Write a review', new_movie_review_path(@movie), :class => "btn btn-danger", :method => :get %>
 
 </div>
 <% end %>
 <br>
 
-
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>

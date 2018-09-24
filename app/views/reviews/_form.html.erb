@@ -1,3 +1,4 @@
+<div style="margin-left: 40pt; margin-top: 30pt;">
 <%= form_for ([@movie, @review]) do |form| %>
   <% if review.errors.any? %>
     <div id="error_explanation">
@@ -13,17 +14,18 @@
 
   <div class="field">
     <%= form.label :rating %>
-    <%= form.number_field :rating %>
+    <%= form.number_field :rating, :class =>'form-control formxs' %>
   </div>
 
   <div class="field">
     <%= form.label :comment %>
-    <%= form.text_area :comment %>
+    <%= form.text_area :comment, :class =>'form-control formxs texta' %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Send review", :class => 'btn btn-large btn-info'%>
   </div>
 
   <% end %>
+  </div>
 
