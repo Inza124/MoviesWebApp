@@ -31,7 +31,6 @@ Rails.application.configure do
   config.serve_static_assets = true
   config.assets.compile = true
 
-  RAILS_ENV=production rake assets:precompile
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
