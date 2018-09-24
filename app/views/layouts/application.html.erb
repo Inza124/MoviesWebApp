@@ -13,7 +13,8 @@
   </head>
 
 <nav class="navbar justify-content-between input-group-btn">
-  <a class="navbar-brand">Heroku-test</a>
+  <a class="navbar-brand">
+  <%= image_tag "logo.png", class: "img-rev"%> </a>
 
  <% if user_signed_in?  %>
  <text class="navbar-brand" style="font-size: 15pt; margin-bottom: -25pt; margin-right: 10pt;" > Hello, <%= current_user.email %></text>
