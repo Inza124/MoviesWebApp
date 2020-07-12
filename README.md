@@ -5,7 +5,6 @@ A simple project written in ruby on rails. It is a simplified alternative to the
 
 ## Table of contents
 * [General info](#general-info)
-* [Screenshots](#screenshots)
 * [Technologies](#technologies)
 * [Features](#features)
 * [Status](#status)
@@ -14,11 +13,6 @@ A simple project written in ruby on rails. It is a simplified alternative to the
 
 ## General info
 his application works on the basis of basic CRUD functionality for several entities, such as users, films or reviews. The PostgreSQL database has been used
-
-## Screenshots
-![Homepage](http://oi65.tinypic.com/2qn5ahe.jpg)
-![Movie view](http://oi63.tinypic.com/in7ig8.jpg)
-![Login page](http://oi68.tinypic.com/2zoek1y.jpg)
 
 ## Technologies
 * Ruby - version 2.3.3
